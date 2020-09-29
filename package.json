@@ -1,10 +1,13 @@
 {
   "name": "@onivoro/server-process",
-  "version": "0.2.0",
+  "version": "0.36.0",
+  "repository": {
+    "url": "https://github.com/onivoro/server-process.git"
+  },
   "scripts": {
     "test": "jest",
     "build": "tsc -p tsconfig.json",
-    "release": "npm version minor && cd dist && npm publish --scope public"
+    "release": "npm version minor && cp package.json dist && cd dist && npm publish --scope public"
   },
   "devDependencies": {
     "@types/jest": "^26.0.14",
