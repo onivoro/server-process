@@ -1,4 +1,4 @@
-import { execRx } from '@onivoro/server-process';
+import { execRx } from './exec-rx';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 

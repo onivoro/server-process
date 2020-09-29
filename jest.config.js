@@ -1,9 +1,11 @@
 module.exports = {
-  name: 'server-process',
-  preset: '../../../jest.config.js',
+  name: 'server-build',
   transform: {
     '^.+\\.[tj]sx?$': 'ts-jest'
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'html'],
-  coverageDirectory: '../../../coverage/libs/server/process'
+  testMatch: ['**/+(*.)+(spec|test).+(ts|js)?(x)'],
+  transform: {
+    '^.+\\.(ts|js|html)$': 'ts-jest'
+  },
 };
