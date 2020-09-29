@@ -1,13 +1,12 @@
 {
   "name": "@onivoro/server-process",
-  "version": "0.0.36",
+  "version": "0.1.0",
   "scripts": {
     "test": "jest",
     "build": "tsc -p tsconfig.json",
     "release": "npm version minor && cd dist && npm publish --scope public"
   },
   "devDependencies": {
-    "@nestjs/testing": "^7.4.4",
     "@types/jest": "^26.0.14",
     "@types/node": "^14.11.2",
     "jest": "^26.4.2",
