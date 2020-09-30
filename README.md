@@ -1,3 +1,3 @@
 # server-process
 
-see [./src/lib/exec-rx.spec.ts](exec-rx.spec.ts) for useage
+see [exec-rx.spec.ts](./src/lib/exec-rx.spec.ts)) for useage
