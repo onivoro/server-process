@@ -1,10 +1,11 @@
 import { exec, ExecOptions } from 'child_process';
 import { Subject } from 'rxjs';
 
-export const execRx = (cmd: string, options?: ExecOptions, emitStdErr = false) => {
+export const execRx = (cmd: string, options?: ExecOptions, emitStdErr = true) => {
   const observer = new Subject<string>();
+
   const proc = exec(cmd, options);
-  proc.stdout.on('data', (data: any) => observer.next(data.toString()));
+  proc.stdout.on('data', (data: any) => observer.next(data?.toString()));
   if (emitStdErr) {
     proc.stderr.on('data', (data: any) => {
       return observer.next(data.toString());
