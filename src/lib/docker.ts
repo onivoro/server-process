@@ -1,7 +1,10 @@
 import { spawnRx } from "./spawn-rx";
 
 export class Docker {
-  constructor(public readonly containerName: string) { }
+  constructor(
+    public readonly containerName: string,
+    public readonly binaryName: string,
+  ) { }
 
   command(cmd: string) {
     const cmdLiteral = this.containerName ? `docker exec ${this.containerName} sh -c '${cmd}'` : cmd;
@@ -15,13 +18,7 @@ export class Docker {
     return cmdLiteral;
   }
 
-  spawnRx(cmd: string, db: string, username: string) {
-    const dbOptions = db ? ['-d', db] : [];
-    const commonArgs = ['-qtAX', '-U', username, ...dbOptions, '-c', cmd];
-    const binaryName = 'psql';
-    return this.containerName
-      ? spawnRx('docker', ['exec', this.containerName, binaryName, ...commonArgs])
-      : spawnRx(binaryName, commonArgs);
+  spawnRx(args: string[]) {
+    return spawnRx('docker', ['exec', this.containerName, this.binaryName, ...args])
   }
-
 }
