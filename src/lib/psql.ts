@@ -7,7 +7,7 @@ export class PSql {
   private container = new Docker(this.containerName, binaryName);
   constructor(public readonly containerName: string) { }
 
-  spawnRx(cmd: string, db: string, username: string) {
+  execRx(cmd: string, db: string, username: string) {
     const dbOptions = db ? ['-d', db] : [];
     const commonArgs = ['-qtAX', '-U', username, ...dbOptions, '-c', cmd];
     return this.containerName
