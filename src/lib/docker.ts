@@ -9,6 +9,6 @@ export class Docker {
   ) { }
 
   execRx(cmd: string, options?: BaseEncodingOptions & ExecOptions, emitStdErr=true) {
-    return execRx(`docker exec ${this.containerName}, ${this.binaryName} ${cmd}`, options, emitStdErr);
+    return execRx(`docker exec ${this.containerName} ${this.binaryName} ${cmd}`, options, emitStdErr);
   }
 }
