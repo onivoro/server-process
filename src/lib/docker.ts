@@ -1,4 +1,4 @@
-import { spawnRx } from "./spawn-rx";
+import { execRx } from "./exec-rx";
 
 export class Docker {
   constructor(
@@ -6,7 +6,7 @@ export class Docker {
     public readonly binaryName: string,
   ) { }
 
-  spawnRx(args: string[]) {
-    return spawnRx('docker', ['exec', this.containerName, this.binaryName, ...args])
+  execRx(args: string[]) {
+    return execRx(['docker', 'exec', this.containerName, this.binaryName, ...args].join( ))
   }
 }

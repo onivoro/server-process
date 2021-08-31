@@ -1,5 +1,5 @@
 import { Docker } from "./docker";
-import { spawnRx } from "./spawn-rx";
+import { execRx } from "./exec-rx";
 
 const binaryName = 'psql';
 
@@ -11,7 +11,7 @@ export class PSql {
     const dbOptions = db ? ['-d', db] : [];
     const commonArgs = ['-qtAX', '-U', username, ...dbOptions, '-c', cmd];
     return this.containerName
-      ? this.container.spawnRx(commonArgs)
-      : spawnRx(binaryName, commonArgs);
+      ? this.container.execRx(commonArgs)
+      : execRx([binaryName, commonArgs].join(' '));
   }
 }
