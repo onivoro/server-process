@@ -1,3 +1,5 @@
+import { ExecOptions } from "child_process";
+import { BaseEncodingOptions } from "fs";
 import { execRx } from "./exec-rx";
 
 export class Docker {
@@ -6,7 +8,7 @@ export class Docker {
     public readonly binaryName: string,
   ) { }
 
-  execRx(args: string[]) {
-    return execRx(['docker', 'exec', this.containerName, this.binaryName, ...args].join( ))
+  execRx(cmd: string, options?: BaseEncodingOptions & ExecOptions, emitStdErr=true) {
+    return execRx(`docker exec ${this.containerName}, ${this.binaryName} ${cmd}`, options, emitStdErr);
   }
 }

@@ -9,7 +9,7 @@ export class PSql {
 
   execRx(cmd: string, db: string, username: string) {
     const dbOptions = db ? ['-d', db] : [];
-    const commonArgs = ['-qtAX', '-U', username, ...dbOptions, '-c', cmd];
+    const commonArgs = ['-qtAX', '-U', username, ...dbOptions, '-c'].join(' ') + cmd;
     return this.containerName
       ? this.container.execRx(commonArgs)
       : execRx([binaryName, commonArgs].join(' '));
