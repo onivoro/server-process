@@ -1,6 +1,7 @@
 {
   "name": "@onivoro/server-process",
   "version": "1.4.0",
+  "type": "module",
   "repository": {
     "url": "https://github.com/onivoro/server-process.git"
   },
