@@ -2,14 +2,16 @@
   "name": "@onivoro/server-process",
   "version": "1.13.0",
   "type": "module",
-  "main": "index.js",
+  "main": "cjs/index.js",
+  "module": "index.js",
   "repository": {
     "url": "https://github.com/onivoro/server-process.git"
   },
   "scripts": {
     "test": "jest",
     "build": "tsc -p tsconfig.json",
-    "release": "rm -rf dist && npm run build && npm version minor && cp package.json dist && cd dist && npm publish --access public"
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "release": "rm -rf dist && npm run build && npm run build:cjs && npm version minor && cp package.json dist && cd dist && npm publish --access public"
   },
   "devDependencies": {
     "@types/jest": "^26.0.14",
