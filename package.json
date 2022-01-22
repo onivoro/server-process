@@ -1,20 +1,21 @@
 {
+  "files": [
+    "dist"
+  ],
   "name": "@onivoro/server-process",
   "version": "1.17.0",
   "repository": {
     "url": "https://github.com/onivoro/server-process.git"
   },
-  "exports": {
-    "import": "./mjs/index.js",
-    "require": "./cjs/index.js"
-  },
-  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "scripts": {
     "test": "jest",
-    "build": "tsc -p tsconfig.json && rollup -c rollup.config.js",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build": "rollup -c",
     "release": "rm -rf dist && npm run build && npm run build:cjs && npm version minor && cp package.json dist && cd dist && npm publish --access public"
   },
+  "type": "module",
+  "types": "dist/index.d.ts",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.3",
