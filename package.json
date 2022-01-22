@@ -7,7 +7,7 @@
     "require": "./dist/index.js"
   },
   "name": "@onivoro/server-process",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "repository": {
     "url": "https://github.com/onivoro/server-process.git"
   },
@@ -17,7 +17,7 @@
     "test": "jest",
     "build": "rollup -c",
     "release": "rm -rf dist && npm run build && npm version minor && npm publish --access public"
-  },  
+  },
   "types": "dist/index.d.ts",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
