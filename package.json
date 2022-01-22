@@ -17,8 +17,7 @@
     "test": "jest",
     "build": "rollup -c",
     "release": "rm -rf dist && npm run build && npm version minor && npm publish --access public"
-  },
-  "type": "module",
+  },  
   "types": "dist/index.d.ts",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
