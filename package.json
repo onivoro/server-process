@@ -11,11 +11,12 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && rollup -c rollup.config.js",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "release": "rm -rf dist && npm run build && npm run build:cjs && npm version minor && cp package.json dist && cd dist && npm publish --access public"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.0",
     "@types/jest": "^26.0.14",
     "@types/node": "^14.11.2",
     "jest": "^26.4.2",
