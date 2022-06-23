@@ -1,14 +1,12 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "dist",
     "declaration": true,
-    "declarationDir": "./dist",
-    "module": "es6",
-    "noImplicitAny": true,
-    "outDir": "./dist",
-    "target": "es5"
+    "rootDir": "src",
+    "types": ["node", "jest"]
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": ["node_modules"]
+  "exclude": ["**/*.spec.ts", "dist"],
+  "include": ["**/*.ts"]
 }
