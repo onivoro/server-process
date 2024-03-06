@@ -1,7 +1,7 @@
 import { exec, ExecOptions } from "child_process";
-import { BaseEncodingOptions } from 'fs';
+import { EncodingOption } from "fs";
 
-export function execPromise(cmd: string, options?: BaseEncodingOptions & ExecOptions): Promise<any> {
+export function execPromise(cmd: string, options?: EncodingOption & ExecOptions): Promise<any> {
     return new Promise((resolve, reject) => {
         exec(cmd, options, (err, stdout) => {
             if (err) {

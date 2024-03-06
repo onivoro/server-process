@@ -8,7 +8,8 @@ describe(execRx.name, () => {
             execRx(`cat ${__filename}`).subscribe((d) => {
                 expect(d).toEqual(expect.stringContaining('execRx worx!'));
                 done();
-            }, fail);
+            }, () => { throw new Error("fail") }
+            );
         });
     });
 
