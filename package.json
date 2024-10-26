@@ -30,9 +30,9 @@
         "module": "commonjs"
     },
     "devDependencies": {
-        "@onivoro/cli": "^22.0.3",
+        "@onivoro/cli": "^22.0.4",
         "@types/jest": "*",
-        "@types/node": "^22.7.9",
+        "@types/node": "^22.8.1",
         "typescript": "*"
     },
     "engines": {
